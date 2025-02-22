@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'OpenDyslexic', system-ui, -apple-system, sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+  }
+
+  /* Increase text spacing for better readability */
+  p, h1, h2, h3, h4, h5, h6 {
+    @apply mb-4;
+  }
+
+  /* Add focus styles for better accessibility */
+  *:focus {
+    @apply outline-2 outline-primary outline-offset-2;
+  }
+
+  /* Add hover states for interactive elements */
+  button:hover, a:hover {
+    @apply transition-all duration-200;
+  }
+}
+
+/* Custom styles for form elements */
+.form-helper-text {
+  @apply text-sm text-muted-foreground mt-1;
+}
+
+.input-wrapper {
+  @apply relative;
+}
+
+.input-icon {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground;
+}
+
+.input-with-icon {
+  @apply pl-10;
+}
